@@ -3,7 +3,7 @@
 
 This is a boilerplate project to integrate Nodejs, SQLite and socket.io with Angular 17 and chartjs.
 
-It simply shows a dummy data for books published per year in real time, and also you can add your book and watch the changes on chart
+It simply shows a dummy data (increase every 20 sec) for books published per year in real time, and also you can add your book and watch the changes on chart
 
 
 
@@ -19,6 +19,9 @@ To run Server Side
 
 ```bash
   cd BooksDataServer
+```
+```bash
+  cp .env.example .env
 ```
 one of below commands
 ```bash
