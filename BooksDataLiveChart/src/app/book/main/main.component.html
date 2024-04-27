@@ -1,0 +1,69 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6"><h1>Add New Book</h1></div>
+    <div class="col-md-6"><h1>Books Chart</h1></div>
+  </div>
+  <div class="row">
+    <div class="col-md-6">
+      <form [formGroup]="form" (ngSubmit)="submit()">
+
+        <div class="form-group">
+          <label for="title">Title:</label>
+          <input
+            formControlName="title"
+            id="title"
+            type="text"
+            class="form-control">
+          <div *ngIf="f['title'].touched && f['title'].invalid" class="alert alert-danger">
+            <div *ngIf="f['title'].errors && f['title'].errors['required']">Title is required.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="author">Author</label>
+          <input
+            formControlName="author"
+            id="author"
+            type="text"
+            class="form-control">
+          <div *ngIf="f['author'].touched && f['author'].invalid" class="alert alert-danger">
+            <div *ngIf="f['author'].errors && f['author'].errors['required']">Author is required.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="pages">Pages Count</label>
+          <input
+            formControlName="pages"
+            id="pages"
+            type="number"
+            class="form-control">
+          <div *ngIf="f['pages'].touched && f['pages'].invalid" class="alert alert-danger">
+            <div *ngIf="f['pages'].errors && f['pages'].errors['required']">Pages is required and should be number.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="published">Published Year</label>
+          <input
+            formControlName="published"
+            id="published"
+            type="number"
+            class="form-control">
+          <div *ngIf="f['published'].touched && f['published'].invalid" class="alert alert-danger">
+            <div *ngIf="f['published'].errors && f['published'].errors['invalidYear']">
+              Published year must be between 2000 and 2023.
+            </div>
+          </div>
+        </div>
+
+        <button class="btn btn-primary m-2" type="submit" [disabled]="!form.valid">Submit</button>
+
+      </form>
+    </div>
+    <div class="col-md-6">
+      <app-bar-chart></app-bar-chart>
+    </div>
+  </div>
+  <hr>
+</div>

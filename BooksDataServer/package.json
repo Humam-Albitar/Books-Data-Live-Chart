@@ -1,0 +1,29 @@
+{
+  "name": "book-data-server",
+  "version": "1.0.0",
+  "main": "source/server.js",
+  "author": "Humam Albitar",
+  "license": "MIT",
+  "scripts": {
+    "dev": "set NODE_ENV=development&& nodemon source/server.js --ignore tests",
+    "start": "set NODE_ENV=production&& node source/server.js",
+    "test": "set NODE_ENV=development&& jest --detectOpenHandles --forceExit"
+  },
+  "dependencies": {
+    "compression": "^1.7.4",
+    "cors": "^2.8.5",
+    "dotenv": "^16.0.3",
+    "express": "^4.19.2",
+    "helmet": "^6.0.0",
+    "morgan": "^1.10.0",
+    "node-cache": "^5.1.2",
+    "socket.io": "^4.7.5",
+    "sqlite3": "^5.1.7",
+    "winston": "^3.8.2"
+  },
+  "devDependencies": {
+    "jest": "^29.3.1",
+    "nodemon": "^2.0.20",
+    "supertest": "^6.3.3"
+  }
+}
